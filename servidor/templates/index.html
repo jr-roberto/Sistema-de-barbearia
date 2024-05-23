@@ -3,33 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
     <title>Document</title>
-
-    <style>
-        :root{
-            --bg:rgb(71, 79, 99);
-        }
-        *{margin: 0;box-sizing: border-box;}
-        body {width: 100svw;height: 100svh;}
-        .tela-login{
-            display: flex;
-            flex-direction: column;
-            background-color: var(--bg);
-            width: 100%;
-            height: 100%;
-        }
-        .tela-login .top {
-            width: 100%;
-            background-image: url('static/img/top.png');
-        }
-    </style>
 </head>
 <body>
 
-    <div class="tela-login">
+    <div class="app">
 
-        <div class="top"></div>
-
+        <div class="top-login">
+            <span class="msg-bem-vindo">Agende um horario</span>
+        </div>
+        <form action="logon" method="post" class="form-login">
+            <span class="label-login">Entre com seus dados</span>
+            <input type="text" name="username" id="username" placeholder="Digite seu login" autocomplete="off">
+            <input type="password" name="password" id="password" autocomplete="off" placeholder="Digite sua senha">
+            <input type="submit" value="Entrar">
+        </form>
+        
+        <a href="login-com-instagram" class="btn-login-com-instagram"><img src="https://images.vexels.com/media/users/3/137198/isolated/lists/07f0d7b69ef071571e4ada2f4d6a053a-icone-do-instagram-colorido.png" alt="img-inst">Entrar com instagram</a>
+        
+        
     </div>
 
 </body>

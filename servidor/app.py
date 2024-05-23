@@ -11,6 +11,10 @@ def realizando_login(username:str, password:str):
 
     return {"valid":False,"message":"Dados de login nao conferem"}
 
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html')
+
 @app.route("/", endpoint="home")
 @app.route("/login", endpoint="login")
 def index():

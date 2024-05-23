@@ -1,19 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0;  
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body {
     width: 100svw;
     height: 100svh;
-    background-color: lightseagreen;
+    background-color: white;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #4F2D41;
+}
+
+/* 
+
+https://barbeiroempreendedor.com/wp-content/uploads/2019/01/Qual-a-import%C3%A2ncia-da-presen%C3%A7a-online-em-uma-estrat%C3%A9gia-de-marketing-para-barbearia.png
+
+Aqui está a paleta de cores extraída da imagem:
+
+#88245B - Roxo escuro
+#4A1733 - Vinho
+#C9A2A6 - Rosa claro acinzentado
+#4F2D41 - Roxo médio
+#744A5F - Rosa escuro
+Esta paleta de cores captura a gama de tonalidades arroxeadas presentes na imagem.
+
+*/
+
+.app .top-login {
+    background-image: url('https://barbeiroempreendedor.com/wp-content/uploads/2019/01/Qual-a-import%C3%A2ncia-da-presen%C3%A7a-online-em-uma-estrat%C3%A9gia-de-marketing-para-barbearia.png');
+    background-position: center;
+    background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
+    width: 100%;
+    height: 200px;
+    display: flex;
+}
+
+.top-login span.msg-bem-vindo {
+    margin: auto;
+    color: white;
+    font-size: x-large;
+    text-decoration: wavy;
 }
 
 .form-login {
     display: flex;
     flex-direction: column;
+    width: 95%;
     margin: 0 auto;
-    width: 100%;
+    margin-bottom: 10px;
+    gap: 5px;
+    padding: 30px 10px;
+    margin-top: 20%;
+    border: solid 1px white;
+    border-radius: 10px;
     max-width: 600px;
-    background-color: whitesmoke;
+}
+
+.form-login span.label-login {
+    margin-top: -50px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.form-login input {
+    font-size: 1.2rem;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-login input:last-child {
+    margin-top: 20px;
+}
+
+.btn-login-com-instagram {
+    all: unset;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    background-color: rgba(245, 245, 245, 0.3);
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: white;
+}
+
+.btn-login-com-instagram img {
+    height: 50px;
 }
