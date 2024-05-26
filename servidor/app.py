@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, render_template, request, redirect, url_for, session
+from user_agents import parse
 app = Flask(__name__)
 app.secret_key = "dev"
 
@@ -11,9 +12,29 @@ def realizando_login(username:str, password:str):
 
     return {"valid":False,"message":"Dados de login nao conferem"}
 
+def is_mobile():
+    user_agent = request.headers.get('User-Agent')
+    if user_agent:
+        user_agent = parse(user_agent)
+        return user_agent.is_mobile or user_agent.is_tablet
+    return False
+
+@app.before_request
+def before_request():
+    if is_mobile():
+        # Adicione lógica aqui para tratar requisições mobile
+        print("Requisição feita de um dispositivo mobile.")
+    else:
+        return render_template('no_mobile.html')
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html')
+
+@app.route('/no_mobile', endpoint='no_mobile')
+def no_mobile():
+    print('Entrou aqui')
+    return render_template('no_mobile.html')
 
 @app.route("/", endpoint="home")
 @app.route("/login", endpoint="login")
